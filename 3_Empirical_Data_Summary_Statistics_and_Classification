@@ -1,0 +1,1 @@
+This directory contains scripts for calculating feature vectors from empirical data and applying trained classifiers on those feature vectors using diploS/HIC (Kern and Schrider 2018). 
