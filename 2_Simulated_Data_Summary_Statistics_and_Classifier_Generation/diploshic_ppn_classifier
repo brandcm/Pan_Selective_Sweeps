@@ -1,0 +1,8 @@
+# Make directory for feature vector files and move .fvec files there
+mkdir ppn_fvec && mv ppn_sim/*.fvec ppn_fvec/
+
+# Create a directory for a balanced dataset of all five classes
+mkdir ppn_trainingSets
+
+# Generate the balanced dataset and place in the new directory
+python diploSHIC.py makeTrainingSets ppn_fvec/neut.msOut.gz.fvec ppn_fvec/soft ppn_fvec/hard 5 0,1,2,3,4,6,7,8,9,10 ppn_trainingSets/
