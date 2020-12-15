@@ -15,7 +15,11 @@ First, we need to simulate genetic regions evolving neutrally, regions subjected
 
 <b>2. Calculate Simulated Summary Statistics and Train Classifiers</b>
 -
-Now that we have simulated data, we can use diploS/HIC to calculate feature vectors with which to train the CNN classifier. Feature vectors are summary statistics calculated for each of the 11 subwindows in a sliding window. You can modify the size of these in your command line. I also included a mask for this step (see more about the mask below). Once these are generated, we can create a balanced dataset for classifier training and then build a classifier. This last step will generate both a .json file and a .hdf5 file.
+Now that we have simulated data, we can use diploS/HIC to calculate feature vectors with which to train the CNN classifier. The example code again uses bonobos and uses the outputs generated from the first step. Feature vectors are summary statistics calculated for each of the 11 subwindows in a sliding window. See Kern and Schrider (2018) for specifics on these 12 statistics. You can modify the size of these in your command line. I also included a mask for this step. Once these are generated, we can create a balanced dataset for classifier training and then build a classifier. This last step will generate both a .json file and a .hdf5 file. 
+
+- I specify "totalPhysLen" in my command line but the value used is the default so feel free to remove this from the code. 
+- I include a mask here where sites with low coverage (< ~80% of the total sample had a read depth < 10) are marked with N's. diploS/HIC will randomly draw 1.1 Mb regions from anywhere in a FASTA file (specified by the "--chrArmsForMasking all" flag) so that the classifier is trained on masked simulated data that bear some resemblence to the empirical data it will encounter later. You can also mask using a specific contig or a comma-separated list of contigs if you would like.
+- You can specify the number of epochs when training a classifier, however, nearly all of my runs involved < 20 epochs so I do not include this option here. 
 
 
 <b>3. Calculate Empirical Summary Statistics and Classify Data</b>
