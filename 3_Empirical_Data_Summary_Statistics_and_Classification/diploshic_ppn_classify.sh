@@ -7,4 +7,4 @@ module load python3
 module load diploshic
 
 # Code
-for f in ~/ppn_chr*.fvec; do diploSHIC.py predict ppModel.json ppModel.weights.hdf5 $f $f.preds; done 
+for f in ppn_chr*.fvec; do diploSHIC.py predict ppnModel.json ppnModel.weights.hdf5 $f $f.preds; done 
