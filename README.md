@@ -1,7 +1,7 @@
 # Pan Selective Sweeps
 This repository hosts code used in the manuscript titled "Soft sweeps predominate recent positive selection in bonobos (<i>Pan paniscus</i>) and chimpanzees (<i>Pan troglodytes</i>)" (Brand et al., in prep). 
 
-The primary analysis of this paper addresses the question: to what extent do recently completed hard and soft sweeps occur in bonobo and chimpanzee genomes? We answer this question by training a convolutional neural network (CNN) per population using simulated data and then apply that classifier to empirical data. We used discoal (Kern and Schrider 2016) to generate simulated data and diploS/HIC (Kern and Schrider 2018) to conduct the rest of the analysis. I describe our approach step by step below. 
+The primary analysis of this paper addresses the question: to what extent do recently completed hard and soft sweeps occur in bonobo and chimpanzee genomes? We answer this question by training a convolutional neural network (CNN) per population using simulated data and then apply that classifier to empirical data. We used discoal (Kern and Schrider 2016) to generate simulated data and diploS/HIC (Kern and Schrider 2018) to conduct the rest of the analysis. I describe our approach step by step below. As there is already excellent documentation for both those programs, I provide detail here specific to this project. You may find it helpful to become familiar with discoal and diploS/HIC first before reading further. 
 
 
 <b>1. Generate Simulated Data</b>
